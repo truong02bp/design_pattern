@@ -1,25 +1,23 @@
 package factory.pizza;
 
-import factory.Pizza;
-
 public class VNClamPizza extends Pizza {
     @Override
-    protected void prepare() {
+    public void prepare() {
         System.out.println("VNClamPizza prepare.....");
     }
 
     @Override
-    protected void bake() {
+    public void bake() {
         System.out.println("VNClamPizza bake......");
     }
 
     @Override
-    protected void cut() {
+    public void cut() {
         System.out.println("VNClamPizza cut.....");
     }
 
     @Override
-    protected void box() {
+    public void box() {
         System.out.println("VNClamPizza box......");
     }
 }
