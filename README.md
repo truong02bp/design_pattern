@@ -1,10 +1,43 @@
-
+# Một số nguyên tắc cần hướng tới khi lập trình hướng đối tượng
+* Encapsulate what varies : đóng gói những gì thay đổi ( hoặc có thể thay đổi trong tương lai)
+  * Lợi ích:
+    * Khi có sự thay đổi xảy ra, chỉ cần thay đổi tại vị trí đóng gói thay vì bất cứ chỗ nào sử dụng đến logic đó
+    * Tách rời phần thay đổi và những phần tĩnh, dễ dàng maintain và đọc code
+-------
+* Favor Composition over Inheritance: ưu tiên thành phần hơn là thừa kế (ưu tiên chữ không phải tất cả)
+  * Nhược điểm của thừa kế
+    * Cứng nhắc, khó mở rộng, khi thay đổi lớp cha sẽ dẫn tới lớp con thay đổi
+    * Khi hệ thống lớn, cây thừa kế sẽ sâu và phức tạp gây khó khăn cho việc hiểu và maintain code
+    * 1 số ngôn ngữ chỉ hỗ trợ đơn kế thừa
+    * Không thể thay đổi ở runtime (fix cứng trong code)
+  * Ưu điểm của kế thừa
+    * Tái sử dụng code
+  * Ưu điểm của thành phần
+    * Dễ dàng mở rộng, hay thay đổi bằng nhiều cách (Dependency injection, setter)
+    * Có thể thay đổi ở runtime
+    ...
+  * Khi nào nên sử dụng kế thừa:
+    * Sử dụng kế thừa khi lớp con và lớp cha có cùng cấu trúc và chức năng,
+    lớp con có thể sử dụng thay thế lớp cha trong một việc hay hoạt động nào đó...
+----
+* Program to interface, not implementations: dùng interface thay vì các triển khai
+  * Lợi ích của việc sử dụng interface để giao tiếp giữa các class:
+    * Tạo ra những khớp nối lỏng lẻo, dễ dàng thay đổi khi cần thiết
+    bằng các kĩ thuật như Dependency injection, setter...
+    * Che giấu logic và dữ liệu, có thể thay đổi ở khâu triển khai mà không ảnh hưởng đến client
+  Ví dụ: Khi giám đốc cần báo cáo X từ phòng kinh doanh, giám đốc chỉ cần bảo trợ lý quản lý báo cáo(interface) 
+    mà không cần phải biết những người trong phòng kinh doanh (implementions) theo nhiệm vụ(X,Y,Z...) để lấy báo cáo
+----
+* Classes should be open for extension but closed for modification: Các lớp nên mở cho việc mở rộng và đóng cho việc thay đổi
+  * Khi thay đổi trong 1 class sẽ gây ảnh hưởng đến các nơi sử dụng class đó
+  * Tốn thời gian, chi phí cho việc testing khi những thứ cũ đã được làm một cách chuẩn mực
+----
 #Tổng hợp các design pattern thông dụng
 
 --------------------------------
 
 ##The Factory Pattern
-* Mục đích: tạo ra instance của Object một cách lỏng lẻo, dễ dàng thay đổi khi object đó phải thay đổi sang instace
+* Mục đích: tạo ra instance của Object một cách lỏng lẻo, dễ dàng thay đổi khi object đó phải thay đổi sang instance
 của 1 class cụ thể khác.
   * Ví dụ: Bạn muốn khởi tạo 1 đối tượng Pizza, nhưng có rất nhiều loại pizza và bạn không biết chắc sẽ khởi tạo instance của loại pizza nào, bạn có thể sử dụng 
   factory để linh động tạo ra đối tượng đó chỉ cần thông tin đầu vào là : type của Pizza
@@ -27,3 +60,4 @@ của 1 class cụ thể khác.
     * Ví dụ: printer, cache, logger, manage or registry settings...
 * Lưu ý
   * Khi xử lý đa luồng, có thể dẫn tới khởi tạo instace khác nhau, lí do là vì 2 luồng cùng thực hiện tạo lazy cùng 1 lúc
+  
