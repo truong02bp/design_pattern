@@ -56,5 +56,6 @@ public class Client {
         remoteControl.buttonOffPressed(3);
         remoteControl.buttonOnPressed(5);
         remoteControl.buttonOnPressed(1);
+        remoteControl.buttonUndoPressed();
     }
 }

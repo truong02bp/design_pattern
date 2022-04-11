@@ -30,7 +30,7 @@
 ----
 * Classes should be open for extension but closed for modification: Các lớp nên mở cho việc mở rộng và đóng cho việc thay đổi
   * Khi thay đổi trong 1 class sẽ gây ảnh hưởng đến các nơi sử dụng class đó
-  * Tốn thời gian, chi phí cho việc testing khi những thứ cũ đã được làm một cách chuẩn mực
+  * Tốn thời gian, chi phí cho việc testing khi thay đổi những thứ cũ đã được làm một cách chuẩn mực
 ----
 #Tổng hợp các design pattern thông dụng
 
@@ -61,3 +61,13 @@ của 1 class cụ thể khác.
 * Lưu ý
   * Khi xử lý đa luồng, có thể dẫn tới khởi tạo instace khác nhau, lí do là vì 2 luồng cùng thực hiện tạo lazy cùng 1 lúc
   
+## Command Pattern
+* Mục đích: Tách đối tượng yêu cầu request ra khỏi đối tượng biết cách thực hiện request đó
+* Lợi ích:
+  * Linh hoạt khi có thêm các request và cách xử lý request mới 
+  * Có thể thay đổi request, cách xử lý request ở runtime mà không cần sửa code cũ
+
+## The Adapter Pattern
+* Mục đích: Giúp các class hoạt động cùng nhau ngay cả khi không tương thích về mặt interface
+* Ví dụ: class Gà Tây có thể hoạt động y như class Vịt thông qua 1 adapter
+* 
