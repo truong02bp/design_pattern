@@ -70,4 +70,11 @@ của 1 class cụ thể khác.
 ## The Adapter Pattern
 * Mục đích: Giúp các class hoạt động cùng nhau ngay cả khi không tương thích về mặt interface
 * Ví dụ: class Gà Tây có thể hoạt động y như class Vịt thông qua 1 adapter
-* 
+
+## The Template Pattern
+* Mục đích: tạo khung xương cho thuật toán và trì hoãn một vài step cho các subclass thực hiện, việc này cho phép 
+các subclass định nghĩa lại các step đó mà không ảnh hưởng đến toàn bộ cấu trúc của thuật toán
+* Lợi ích:
+  * Tính đóng gói, khi cần chỉ thay đổi 1 chỗ thay vì nhiều class và che giấu logic không thiết với các class khác
+  * Clean design, reuse code tối đa
+  * Dễ dàng mở rộng, thêm các subclass khác
