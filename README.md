@@ -31,6 +31,11 @@
 * Classes should be open for extension but closed for modification: Các lớp nên mở cho việc mở rộng và đóng cho việc thay đổi
   * Khi thay đổi trong 1 class sẽ gây ảnh hưởng đến các nơi sử dụng class đó
   * Tốn thời gian, chi phí cho việc testing khi thay đổi những thứ cũ đã được làm một cách chuẩn mực
+---
+# Hollywood principle
+* Don't call us, we'll call you: là một cách ngăn chặn các phụ thuộc giữa component cấp cao và cấp thấp, cho
+phép component cấp cao móc nối component cấp thấp vào nhưng component cấp cao sẽ quyết định khi nào chúng cần tới component cấp thấp và bằng cách nào
+* ![img.png](img.png)
 ----
 #Tổng hợp các design pattern thông dụng
 
@@ -50,7 +55,7 @@ của 1 class cụ thể khác.
   * Không nên sử dụng với các đối tượng ít có sự thay đổi, ví dụ như String... 
   để cồng kềnh không cần thiết 
 
-
+-------
 ## Singleton Pattern
 * Mục đích: đảm bảo chỉ có 1 instance của class được khởi tạo trong hệ thống
 * Lợi ích:
@@ -60,17 +65,17 @@ của 1 class cụ thể khác.
     * Ví dụ: printer, cache, logger, manage or registry settings...
 * Lưu ý
   * Khi xử lý đa luồng, có thể dẫn tới khởi tạo instace khác nhau, lí do là vì 2 luồng cùng thực hiện tạo lazy cùng 1 lúc
-  
+-----  
 ## Command Pattern
 * Mục đích: Tách đối tượng yêu cầu request ra khỏi đối tượng biết cách thực hiện request đó
 * Lợi ích:
   * Linh hoạt khi có thêm các request và cách xử lý request mới 
   * Có thể thay đổi request, cách xử lý request ở runtime mà không cần sửa code cũ
-
+------
 ## The Adapter Pattern
 * Mục đích: Giúp các class hoạt động cùng nhau ngay cả khi không tương thích về mặt interface
 * Ví dụ: class Gà Tây có thể hoạt động y như class Vịt thông qua 1 adapter
-
+------
 ## The Template Pattern
 * Mục đích: tạo khung xương cho thuật toán và trì hoãn một vài step cho các subclass thực hiện, việc này cho phép 
 các subclass định nghĩa lại các step đó mà không ảnh hưởng đến toàn bộ cấu trúc của thuật toán
